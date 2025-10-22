@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="<?php echo BASE_URL; ?>">
+    <link rel="stylesheet" href="css/style.css">
+    <title>BibliotecaPDF</title>
+</head>
+<body>
+    <header>
+        <nav class="main-nav">
+            <a href="inicio">Inicio</a>
+            <a href="fichas">Fichas</a>
+            <a href="libros">Libros</a>
+            <a href="libros/fichas">Fichas por libro</a>
+            <?php if (isset($_SESSION['usuario']) && $_SESSION['usuario'] === 'admin'): ?>
+                <span class="usuario-logueado">Conectado: admin</span>
+                <a href="login/salir">Salir</a>
+            <?php else: ?>
+                <a href="login">Iniciar sesión</a>
+            <?php endif; ?>
+        </nav>
+    </header>
+    <main>
